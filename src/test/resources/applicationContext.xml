@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans >
+        <bean name="noProfileBean" id="noProfileBean"
+              class="java.lang.String">
+            <constructor-arg value="I'm a free bean" />
+        </bean>
+
+        <beans profile="dev">
+            <bean name="message" id="message" class="java.lang.String">
+                <constructor-arg value="I'm a dev bean" />
+            </bean>
+        </beans>
+
+        <beans profile="prod">
+            <bean name="message" id="message" class="java.lang.String">
+                <constructor-arg value="I'm a prod bean" />
+            </bean>
+        </beans>
+    </beans>
+</beans>
